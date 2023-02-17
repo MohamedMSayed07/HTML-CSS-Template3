@@ -856,6 +856,7 @@ ul {
     top: 0;
     background-color: var(--main-color);
     /* Added By Me */
+    transition: 2s;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
 }

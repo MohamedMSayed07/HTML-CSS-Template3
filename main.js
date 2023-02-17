@@ -1,9 +1,43 @@
+// Start Progress Function
+let section = document.querySelector(".our-skills");
+let spans = document.querySelectorAll(".the-progress span");
+
+window.onscroll = function () {
+    if (window.scrollY >= section.offsetTop) {
+        spans.forEach( (span) => {
+            span.style.width = span.dataset.width;
+        });
+    };
+    if (window.scrollY >= statsSection.offsetTop){
+        if(!started)
+            number.forEach((num) => startCount(num));
+        started = true;
+    };
+};
+// End Progress Function
+
+// Start Stats Function
+let statsSection = document.querySelector(".stats");
+let number = document.querySelectorAll(".stats .number");
+let started = false;
+
+function startCount(el) {
+    let goal = el.dataset.goal;
+    let count = setInterval( () => {
+        el.textContent++
+        if(el.textContent == goal)
+            clearInterval(count);
+    },2000/goal);
+};
+
+// End Stats Function
+
+// Start Timer Function
 let days = document.querySelector(".days");
 let hours = document.querySelector(".hours");
 let minutes = document.querySelector(".minutes");
 let seconds = document.querySelector(".seconds");
 
-console.log(days);
 // CountDownDate In MilliSeconds
 let countDownDate = new Date("Mar 22, 2023 23:59:59").getTime();
 
@@ -29,3 +63,4 @@ let count = setInterval (() => {
     if(dateDiff >= 0)
         clearInterval();
 }, 1000);
+// End Timer Function

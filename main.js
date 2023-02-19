@@ -60,7 +60,12 @@ let count = setInterval (() => {
         hours.innerHTML = `0${hours.innerHTML}`
     if(days.innerHTML < 10)
         days.innerHTML = `0${days.innerHTML}`
-    if(dateDiff >= 0)
-        clearInterval();
+    if(dateDiff <= 0) {
+        clearInterval(count);
+        days.innerHTML = 0;
+        hours.innerHTML = 0;
+        minutes.innerHTML = 0;
+        seconds.innerHTML = 0;
+    }
 }, 1000);
 // End Timer Function
